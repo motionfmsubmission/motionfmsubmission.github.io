@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Motion Flow Matching for Human Motion Synthesis and Editing (ECCV 5540) </h1>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <h2 class="subtitle has-text-centered">
+    <span class="dnerf"  style="font-weight: bolder; font-size: larger;">Motion In-Between</span> 
+  </h2>
+
+  <h2 class="subtitle has-text-centered" style="border-color: antiquewhite;">
+    The <span style="color: #3d9d6c;font-weight: bold;">green</span> color represents known motion, while the <span style="color: #3085b1;font-weight: bold;">blue</span> color represents unknown (or generated) motion.
+    
+  </h2>
+
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+     
+       <div class="column">
+        <h2 class="title is-4"></h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+              "a person jumps sideways to their left several times, then several times to the right."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-in-between-new/sample10_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+       <!-- Matting. -->
+       <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+            "a person does a funky line dance and then exits to their left."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-in-between-new/sample41_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+            "a person walks diagonally and raises arms in a t pose and seems to be balancing on a wide beam. then stops and drops arms to side."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-in-between-new/sample02_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!--/ Matting. -->
+
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <h2 class="subtitle has-text-centered">
+    <span class="dnerf" style="font-weight: bolder;  font-size: larger;">Motion Prediction</span> 
+  </h2>
+  <h2 class="subtitle has-text-centered">
+    The <span style="color: #3d9d6c;font-weight: bold;">green</span> color represents known motion, while the <span style="color: #3085b1;font-weight: bold;">blue</span> color represents unknown (or generated) motion.
+    
+  </h2>
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 50pt;">
+            "a man walks in a curved line."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-prediction-new/sample50_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+       <!-- Matting. -->
+       <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 50pt;">
+           "a person turns to throw something with his left hand."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-prediction-new/sample25_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-4"></h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 50pt;">
+             "a person walks out, turns, walks back and turns and walks out again and turns."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/Edit-prediction-new/sample888_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <!--/ Matting. -->
+
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <h2 class="subtitle has-text-centered">
+    <span class="dnerf"  style="font-weight: bolder; font-size: larger;">Text-to-Motion Generation</span> 
+  </h2>
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+           "a man is standing with feet wide apart and arms out swinging different motions acting like a monkey."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/T2m/sample06_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      
+       <div class="column">
+        <h2 class="title is-4"></h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+              "a man is doing jumping jacks."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/T2m/sample36_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+       
+       <!-- Matting. -->
+       <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+           "a person at a standstill starts running, then stops."
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/T2m/sample110_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-4">  </h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="height: 60pt;">
+            "a person walked by making the circle"
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/motions/T2m/sample13_rep00_smpl_vertices.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!--/ Matting. -->
+
+
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
